@@ -1,6 +1,14 @@
 public class Lab3 {
     public static void main(String[] args) {
-        System.out.println("\\");
+        String s = "AB";
+        String s1 = "A";
+        System.out.println(s == (s1+"B").intern());
+        System.out.println(s.equals(s1+"B"));
+        System.out.println("A" == new String("A")/*.intern()*/);
+        String s3 = "AB";
+        System.out.println("s == s3: " + (s == s3));
+
+        /*System.out.println("\\");
         String text = "1.2.3";
         final String[] textParts = text.split("\\.");
         for (int i = 0; i < textParts.length; i++) {
@@ -15,7 +23,7 @@ public class Lab3 {
         System.out.println(s);
         System.out.println(s2);
         s += "!";
-        System.out.println(s);
+        System.out.println(s);*/
         /*String s3 = "";
         for (int i = 0; i < 10; i++) {
             s3 += i;
@@ -32,11 +40,11 @@ public class Lab3 {
         }
         System.out.println(s3);*/
 
-        StringBuffer s3 = new StringBuffer();
+        /*StringBuffer s3 = new StringBuffer();
         for (int i = 0; i < 10; i++) {
             s3.append(i);
         }
-        System.out.println(s3);
+        System.out.println(s3);*/
 
         /*s3.append('\uFFFF');
         System.out.println(s3);*/
