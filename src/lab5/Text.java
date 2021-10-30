@@ -2,6 +2,7 @@ package lab5;
 
 public class Text {
     public Text(String textString) {
+        final String[] sentencesStrings = textString.split("(?<=[.?!]) ");
 //        todo add realization
     }
 
