@@ -1,4 +1,27 @@
 package lab5;
 
+import java.util.Arrays;
+
 public class Word implements SentencePart {
+    private Letter[] letters;
+
+    public Word(String wordString) {
+        letters = new Letter[wordString.length()];
+        for (int i = 0; i < letters.length; i++) {
+            letters[i] = new Letter(wordString.charAt(i));
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Word word = (Word) o;
+        return Arrays.equals(letters, word.letters);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(letters);
+    }
 }

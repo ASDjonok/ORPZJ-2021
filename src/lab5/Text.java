@@ -17,7 +17,16 @@ public class Text {
      * @return
      */
     public int[] getArrayOfQuantitySentencesWithWords(String[] wordsArray) {
-//        todo add realization
-        return new int[0];
+        int[] arrayOfQuantitySentencesWithWords = new int[wordsArray.length];
+        boolean[] arrayOfWordsExistence;
+        for (Sentence sentence : sentences) {
+            arrayOfWordsExistence = sentence.getArrayOfWordsExistence(wordsArray);
+            for (int i = 0; i < arrayOfWordsExistence.length; i++) {
+                if (arrayOfWordsExistence[i]) {
+                    arrayOfQuantitySentencesWithWords[i]++;
+                }
+            }
+        }
+        return arrayOfQuantitySentencesWithWords;
     }
 }
