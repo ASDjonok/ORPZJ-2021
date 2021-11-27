@@ -10,4 +10,9 @@ public abstract class RailwayCarriage {
     public int getLuggageQuantity() {
         return luggageQuantity;
     }
+
+    @Override
+    public String toString() {
+        return "luggageQuantity=" + luggageQuantity;
+    }
 }

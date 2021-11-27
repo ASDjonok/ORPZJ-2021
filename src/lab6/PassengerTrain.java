@@ -1,5 +1,8 @@
 package lab6;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class PassengerTrain {
     private PassengerCarriage[] passengerCarriages;
 
@@ -21,5 +24,16 @@ public class PassengerTrain {
             luggageQuantity += passengerCarriage.getLuggageQuantity();
         }
         return luggageQuantity;
+    }
+
+    public void sortByComfortLevel() {
+        Arrays.sort(passengerCarriages, Comparator.comparing(PassengerCarriage::getComfortLevel));
+    }
+
+    @Override
+    public String toString() {
+        return "PassengerTrain{" +
+                "passengerCarriages=" + Arrays.toString(passengerCarriages) +
+                '}';
     }
 }

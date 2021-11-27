@@ -7,10 +7,14 @@ package lab6;
 public class Main {
     public static void main(String[] args) {
         final PassengerCarriage[] passengerCarriages = {
-                new PassengerCarriage(10, 10),
-                new RestaurantCarriage(3)
+                new RestaurantCarriage(3, 1),
+                new PassengerCarriage(10, 10, 1)
         };
         PassengerTrain passengerTrain = new PassengerTrain(passengerCarriages);
-        System.out.println(new RestaurantCarriage(3) instanceof PassengerCarriage);
+//        System.out.println(new RestaurantCarriage(3) instanceof PassengerCarriage);
+        System.out.println("Passengers quantity = " + passengerTrain.getPassengersQuantity());
+        System.out.println("Luggage quantity = " + passengerTrain.getLuggageQuantity());
+        passengerTrain.sortByComfortLevel();
+        System.out.println(passengerTrain);
     }
 }
