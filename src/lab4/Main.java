@@ -36,6 +36,7 @@ public class Main {
         });*/
 //        Arrays.sort(cars, (o1, o2) -> Integer.compare(o1.getPaintLayerThickness(), o2.getPaintLayerThickness()));
         Arrays.sort(cars, Comparator.comparingInt(Car::getPaintLayerThickness));
+        Arrays.sort(cars, Comparator.comparingDouble(Car::getMyDoubleField));
 
         System.out.println("====");
         for (Car car : cars) {

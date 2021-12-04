@@ -6,6 +6,7 @@ import java.util.Objects;
 public /*abstract*/ class Car /*extends Object*/ implements Comparable<Car> {
     private String color;
     private int paintLayerThickness;
+    private double myDoubleField;
     private BodyType bodyType;
 
     public Car(String color, int paintLayerThickness, BodyType bodyType) {
@@ -41,6 +42,14 @@ public /*abstract*/ class Car /*extends Object*/ implements Comparable<Car> {
 
     public int getPaintLayerThickness() {
         return paintLayerThickness;
+    }
+
+    public double getMyDoubleField() {
+        return myDoubleField;
+    }
+
+    public void setMyDoubleField(double myDoubleField) {
+        this.myDoubleField = myDoubleField;
     }
 
     //todo add generic
