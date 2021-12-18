@@ -7,24 +7,32 @@ public class MyCollection<T> implements List<T> {
     private Node<T> head;
 
     private /*static*/ class Node<T> {
-        private Node next;
+        private Node<T> next;
         private T data;
 
         public Node(T data) {
             this.data = data;
         }
 
-        public Node(T data, Node next) {
+        public Node(T data, Node<T> next) {
             this.data = data;
             this.next = next;
         }
 
-        public void setNext(Node next) {
+        public void setNext(Node<T> next) {
             this.next = next;
         }
 
-        public Node getNext() {
+        public Node<T> getNext() {
             return next;
+        }
+
+        public T getData() {
+            return data;
+        }
+
+        public void setData(T data) {
+            this.data = data;
         }
     }
 
@@ -46,7 +54,20 @@ public class MyCollection<T> implements List<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new Iterator<T>() {
+            private Node<T> currentNode = head;
+            @Override
+            public boolean hasNext() {
+                return currentNode != null;
+            }
+
+            @Override
+            public T next() {
+                Node<T> resultNode = currentNode;
+                currentNode = currentNode.next;
+                return resultNode.getData();
+            }
+        };
     }
 
     @Override
@@ -144,7 +165,52 @@ public class MyCollection<T> implements List<T> {
 
     @Override
     public ListIterator<T> listIterator() {
-        return null;
+        return new ListIterator<T>() {
+            @Override
+            public boolean hasNext() {
+                return false;
+            }
+
+            @Override
+            public T next() {
+                return null;
+            }
+
+            @Override
+            public boolean hasPrevious() {
+                return false;
+            }
+
+            @Override
+            public T previous() {
+                return null;
+            }
+
+            @Override
+            public int nextIndex() {
+                return 0;
+            }
+
+            @Override
+            public int previousIndex() {
+                return 0;
+            }
+
+            @Override
+            public void remove() {
+
+            }
+
+            @Override
+            public void set(T t) {
+
+            }
+
+            @Override
+            public void add(T t) {
+
+            }
+        };
     }
 
     @Override
